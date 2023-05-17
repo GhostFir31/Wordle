@@ -10,8 +10,6 @@ public InterfazWordle(){
 
 
 mostrarTablero();
-mostrarTeclado();
-
 
 }
 
@@ -42,7 +40,7 @@ canvas=Canvas.getCanvas();
     }
     
 }
-
+/* 
 public void mostrarTeclado(){
 
 char letra;
@@ -77,7 +75,7 @@ canvas=Canvas.getCanvas();
         }
 
  }
-
+*/
  public int juegoVisual(JuegoWordle juego,int posicionY) {
 
   int compatibilidad;
@@ -89,20 +87,20 @@ canvas=Canvas.getCanvas();
   ArrayList<Character> letrasPalabraEscogida=juego.getletrasPalabraEscogida();
   
   ArrayList<Integer> Evaluacion = juego.getEvaluacion();
-  
+  /* 
   System.out.println(letrasPalabraUsuario);
   
   System.out.println(letrasPalabraEscogida);
   
   System.out.println("evalaucion traspada="+Evaluacion);
-  
+  */
   for(int i=0;i<Evaluacion.size();i++){
    
   compatibilidad=Evaluacion.get(i);
   
   switch(compatibilidad){
    
-    case 0: canvas.Ficha(letrasPalabraUsuario.get(i), posicionX, posicionY, 40,Color.blue);
+    case 0: canvas.Ficha(letrasPalabraUsuario.get(i), posicionX, posicionY, 40,Color.gray);
             
             break;
   
@@ -125,15 +123,6 @@ canvas=Canvas.getCanvas();
 return posicionY+=70;
 
  }
-
-public void pintarLetra(){
-
-
-
-
-
-}
-
 
 }
 

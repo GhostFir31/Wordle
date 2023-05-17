@@ -27,7 +27,7 @@ public class Canvas {
    */
   public static Canvas getCanvas() {
     if (canvasSingleton == null) {
-      canvasSingleton = new Canvas("Wordle", 770, 700, Color.white);
+      canvasSingleton = new Canvas("Wordle", 770, 450, Color.white);
     }
     canvasSingleton.setVisible(true);
     return canvasSingleton;
@@ -236,7 +236,7 @@ public class Canvas {
    
     graphic = (Graphics2D) canvasImage.getGraphics();
 
-    graphic.setColor(Color.gray);
+    graphic.setColor(Color.black);
 
     graphic.fillRect(posicionX+40, posicionY, 60, 60); 
    
