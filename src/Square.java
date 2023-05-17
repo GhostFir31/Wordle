@@ -15,6 +15,7 @@ public class Square {
   private String color;
   private boolean isVisible;
   private Canvas canvas;
+
   /**
    * Create a new square at default position with default color.
    */
@@ -25,7 +26,7 @@ public class Square {
     this.color = color;
 
     this.xPosition = xPosition;
-    
+
     this.yPosition = yPosition;
 
     isVisible = true;
@@ -33,8 +34,6 @@ public class Square {
     draw();
 
   }
-
-
 
   /**
    * int square position

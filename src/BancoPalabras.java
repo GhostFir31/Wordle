@@ -4,77 +4,77 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
+
 public class BancoPalabras {
-    
-private ArrayList<String> arregloPalabras;
 
-    public BancoPalabras() {
-      String linea;
+  private ArrayList<String> arregloPalabras;
 
-      arregloPalabras = new ArrayList<>();
+  public BancoPalabras() {
+    String linea;
 
-      try {
-          File listaPalabras = new File("src/Palabras");
+    arregloPalabras = new ArrayList<>();
 
-          FileReader lectorArchivo = new FileReader(listaPalabras);
+    try {
+      File listaPalabras = new File("src/Palabras");
 
-          BufferedReader bufferLector = new BufferedReader(lectorArchivo);
+      FileReader lectorArchivo = new FileReader(listaPalabras);
 
-          while ((linea = bufferLector.readLine()) != null) {
-              arregloPalabras.add(linea);
-          }
+      BufferedReader bufferLector = new BufferedReader(lectorArchivo);
 
-          bufferLector.close();
-          lectorArchivo.close();
+      while ((linea = bufferLector.readLine()) != null) {
+        arregloPalabras.add(linea);
+      }
 
-      } catch (IOException e) {
-          
-          System.out.println("Error al leer el archivo: " + e.getMessage());
+      bufferLector.close();
+      lectorArchivo.close();
+
+    } catch (IOException e) {
+
+      System.out.println("Error al leer el archivo: " + e.getMessage());
+    }
+  }
+
+  public boolean buscarPalabra(String palabra) {
+
+    for (String i : arregloPalabras) {
+
+      if (i.trim().equals(palabra.trim())) {
+
+        return true;
+
       }
     }
+    return false;
+  }
 
-    public boolean buscarPalabra(String palabra) {
+  public String buscarPosicion(int posicion) {
 
-        for (String i : arregloPalabras) {
+    return arregloPalabras.get(posicion).trim();
 
-            if (i.trim().equals(palabra.trim())) {
+  }
 
-                return true;
+  public String palabraAleatoria() {
 
-            }
-        }
-        return false;
+    Random numeroAleatorio = new Random();
+
+    int posicionAleatoria;
+
+    posicionAleatoria = numeroAleatorio.nextInt(arregloPalabras.size());
+
+    return arregloPalabras.get(posicionAleatoria).trim();
+
+  }
+
+  public void mostrarArregloArchivo() {
+    int numeroPalabra = 0;
+
+    for (String palabra : arregloPalabras) {
+
+      System.out.println(" " + numeroPalabra + " " + palabra);
+
+      numeroPalabra++;
     }
 
-    public String buscarPosicion(int posicion){
-
-      return arregloPalabras.get(posicion).trim();
-
-    }
-  
-    public String palabraAleatoria(){
-
-      Random numeroAleatorio=new Random();
-      
-      int posicionAleatoria;
-      
-     posicionAleatoria=numeroAleatorio.nextInt(arregloPalabras.size());
-
-      return arregloPalabras.get(posicionAleatoria).trim();
-
-    }
-    public void mostrarArregloArchivo(){
-      int numeroPalabra=0;
-
-        for (String palabra : arregloPalabras) {
-          
-            System.out.println(" "+numeroPalabra+" "+palabra);
-
-           numeroPalabra++;
-        }
-
-
-    }
+  }
 
 }
-

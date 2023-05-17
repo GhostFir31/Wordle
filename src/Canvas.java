@@ -27,7 +27,7 @@ public class Canvas {
    */
   public static Canvas getCanvas() {
     if (canvasSingleton == null) {
-      canvasSingleton = new Canvas("Wordle", 770, 450, Color.white);
+      canvasSingleton = new Canvas("Wordle", 770, 700, Color.white);
     }
     canvasSingleton.setVisible(true);
     return canvasSingleton;
@@ -98,7 +98,7 @@ public class Canvas {
   // in this project clean and simple for educational purposes.
   public void draw(Object referenceObject, String color, Shape shape) {
     objects.remove(referenceObject); // just in case it was already there
-    
+
     objects.add(referenceObject); // add at the end
 
     shapes.put(referenceObject, new ShapeDescription(shape, color));
@@ -143,9 +143,9 @@ public class Canvas {
       graphic.setColor(new Color(255, 104, 31));
     } else if (colorString.equals("gray")) {
 
-      graphic.setColor(new Color(128,128,128));
+      graphic.setColor(new Color(128, 128, 128));
 
-    }else {
+    } else {
       graphic.setColor(Color.black);
     }
   }
@@ -169,7 +169,7 @@ public class Canvas {
    * Redraw ell shapes currently on the Canvas.
    */
   private void redraw() {
-    
+
     for (Object shape : objects) {
       shapes.get(shape).draw(graphic);
     }
@@ -221,30 +221,29 @@ public class Canvas {
     }
   }
 
-  public void dibujarLetra(char letra, int posicionX, int posicionY)
-  {
-      graphic.setFont(new Font("Arial",Font.PLAIN,40));
-      
-      setForegroundColor("black");
+  public void dibujarLetra(char letra, int posicionX, int posicionY) {
+    graphic.setFont(new Font("Arial", Font.PLAIN, 40));
 
-      graphic.drawString(""+letra, posicionX, posicionY);
-      
-      canvas.repaint();
+    setForegroundColor("black");
+
+    graphic.drawString("" + letra, posicionX, posicionY);
+
+    canvas.repaint();
   }
 
-  public void Ficha(char letraChar, int posicionX, int posicionY, int tamano,Color colorFondo){
-   
+  public void Ficha(char letraChar, int posicionX, int posicionY, int tamano, Color colorFondo) {
+
     graphic = (Graphics2D) canvasImage.getGraphics();
 
     graphic.setColor(Color.black);
 
-    graphic.fillRect(posicionX+40, posicionY, 60, 60); 
-   
-    graphic.setColor(colorFondo);
-   
-    graphic.fillRect(posicionX+45, posicionY+5, 50, 50); 
+    graphic.fillRect(posicionX + 40, posicionY, 60, 60);
 
-    dibujarLetra(letraChar, posicionX+55, posicionY+45);
+    graphic.setColor(colorFondo);
+
+    graphic.fillRect(posicionX + 45, posicionY + 5, 50, 50);
+
+    dibujarLetra(letraChar, posicionX + 55, posicionY + 45);
 
   }
 
