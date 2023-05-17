@@ -114,6 +114,7 @@ public class App {
 
       opcion = leer.nextInt();
       leer.nextLine();
+      
       switch (opcion) {
 
         case 1:

@@ -124,42 +124,36 @@ public class InterfazWordle {
 
   }
   
-  public Color compatibilidad(JuegoWordle juego){
+  public Color compatibilidad(JuegoWordle juego,int posicion) {
 
-    int compatibilidad;
+   Color color=Color.blue;
 
     ArrayList<Integer> Evaluacion = juego.getEvaluacion();
 
-    for (int i = 0; i < Evaluacion.size(); i++) {
+   // for (int i = 0; i < Evaluacion.size(); i++) {
 
-      compatibilidad = Evaluacion.get(i);
+        int compatibilidad = Evaluacion.get(posicion);
+        
+        if (compatibilidad == 0) {
 
-      switch (compatibilidad) {
+            color=Color.gray;
 
-        case 0:
-                
-            return Color.gray;
+        } else if (compatibilidad == 1) {
 
+            color=Color.green;
+
+        } else if (compatibilidad == 2) {
+
+           color=Color.yellow;
+
+        } else {
           
+            System.out.println("Opcion no encontrada");
+        }
+ //   }
 
-        case 1:
-               
-            return Color.green;
-
-          
-
-        case 2:
-          
-           return Color.yellow;      
-
-        default:
-
-          System.out.println("Opcion no encontrada");
-
-      }
-    }
-    return Color.blue;  
-  }
+    return color;
+}
 
   
   public int pintarLetraTeclado(JuegoWordle juego) {
@@ -167,91 +161,91 @@ public class InterfazWordle {
    Teclado listaLetras=new Teclado();
 
    ArrayList<Character> letrasPalabraUsuario = juego.getletrasPalabraUsuario();
-
+   
 
   for(int i=0;i<letrasPalabraUsuario.size();i++){
 
    switch(letrasPalabraUsuario.get(i)){
 
-    case 'Q': canvas.Ficha(letrasPalabraUsuario.get(i), 0, 450, 40, compatibilidad(juego));
+    case 'Q': canvas.Ficha(letrasPalabraUsuario.get(i), 0, 450, 40, compatibilidad(juego,i));
               
               break;
-    case 'W': canvas.Ficha(letrasPalabraUsuario.get(i), 0+70, 450, 40, compatibilidad(juego));
+    case 'W': canvas.Ficha(letrasPalabraUsuario.get(i), 0+70, 450, 40, compatibilidad(juego,i));
               
               break;
-    case 'E': canvas.Ficha(letrasPalabraUsuario.get(i), 0+140, 450, 40, compatibilidad(juego));
+    case 'E': canvas.Ficha(letrasPalabraUsuario.get(i), 0+140, 450, 40, compatibilidad(juego,i));
              
               break;
-    case 'R': canvas.Ficha(letrasPalabraUsuario.get(i), 0+210, 450, 40, compatibilidad(juego));
+    case 'R': canvas.Ficha(letrasPalabraUsuario.get(i), 0+210, 450, 40, compatibilidad(juego,i));
               
               break;
-    case 'T': canvas.Ficha(letrasPalabraUsuario.get(i), 0+280, 450, 40, compatibilidad(juego));
+    case 'T': canvas.Ficha(letrasPalabraUsuario.get(i), 0+280, 450, 40, compatibilidad(juego,i));
               
               break;
-    case 'Y': canvas.Ficha(letrasPalabraUsuario.get(i), 0+350, 450, 40, compatibilidad(juego));
+    case 'Y': canvas.Ficha(letrasPalabraUsuario.get(i), 0+350, 450, 40, compatibilidad(juego,i));
               
               break;
-    case 'U': canvas.Ficha(letrasPalabraUsuario.get(i), 0+420, 450, 40, compatibilidad(juego));
+    case 'U': canvas.Ficha(letrasPalabraUsuario.get(i), 0+420, 450, 40, compatibilidad(juego,i));
               
               break;
-    case 'I': canvas.Ficha(letrasPalabraUsuario.get(i), 0+490, 450, 40, compatibilidad(juego));
+    case 'I': canvas.Ficha(letrasPalabraUsuario.get(i), 0+490, 450, 40, compatibilidad(juego,i));
               
               break;
-    case 'O': canvas.Ficha(letrasPalabraUsuario.get(i), 0+560, 450, 40, compatibilidad(juego));
+    case 'O': canvas.Ficha(letrasPalabraUsuario.get(i), 0+560, 450, 40, compatibilidad(juego,i));
               
               break;
-    case 'P': canvas.Ficha(letrasPalabraUsuario.get(i), 0+630, 450, 40, compatibilidad(juego));
+    case 'P': canvas.Ficha(letrasPalabraUsuario.get(i), 0+630, 450, 40, compatibilidad(juego,i));
               
               break;
-    case 'A': canvas.Ficha(letrasPalabraUsuario.get(i), 0, 450+70, 40, compatibilidad(juego));
+    case 'A': canvas.Ficha(letrasPalabraUsuario.get(i), 0, 450+70, 40, compatibilidad(juego,i));
               
               break;
-    case 'S': canvas.Ficha(letrasPalabraUsuario.get(i), 0+70, 450+70, 40, compatibilidad(juego));
+    case 'S': canvas.Ficha(letrasPalabraUsuario.get(i), 0+70, 450+70, 40, compatibilidad(juego,i));
               
               break;
-    case 'D': canvas.Ficha(letrasPalabraUsuario.get(i), 0+140, 450+70, 40, compatibilidad(juego));
+    case 'D': canvas.Ficha(letrasPalabraUsuario.get(i), 0+140, 450+70, 40, compatibilidad(juego,i));
               
               break;
-    case 'F': canvas.Ficha(letrasPalabraUsuario.get(i), 0+210, 450+70, 40, compatibilidad(juego));
+    case 'F': canvas.Ficha(letrasPalabraUsuario.get(i), 0+210, 450+70, 40, compatibilidad(juego,i));
               
               break;
-    case 'G': canvas.Ficha(letrasPalabraUsuario.get(i), 0+280, 450+70, 40, compatibilidad(juego));
+    case 'G': canvas.Ficha(letrasPalabraUsuario.get(i), 0+280, 450+70, 40, compatibilidad(juego,i));
               
               break;
-    case 'H': canvas.Ficha(letrasPalabraUsuario.get(i), 0+350, 450+70, 40, compatibilidad(juego));
+    case 'H': canvas.Ficha(letrasPalabraUsuario.get(i), 0+350, 450+70, 40, compatibilidad(juego,i));
               
               break;
-    case 'J': canvas.Ficha(letrasPalabraUsuario.get(i), 0+420, 450+70, 40, compatibilidad(juego));
+    case 'J': canvas.Ficha(letrasPalabraUsuario.get(i), 0+420, 450+70, 40, compatibilidad(juego,i));
               
               break;
-    case 'K': canvas.Ficha(letrasPalabraUsuario.get(i), 0+490, 450+70, 40, compatibilidad(juego));
+    case 'K': canvas.Ficha(letrasPalabraUsuario.get(i), 0+490, 450+70, 40, compatibilidad(juego,i));
               
               break;
-    case 'L': canvas.Ficha(letrasPalabraUsuario.get(i), 0+560, 450+70, 40, compatibilidad(juego));
+    case 'L': canvas.Ficha(letrasPalabraUsuario.get(i), 0+560, 450+70, 40, compatibilidad(juego,i));
              
               break;
-    case 'Ñ': canvas.Ficha(letrasPalabraUsuario.get(i), 0+630, 450, 40, compatibilidad(juego));
+    case 'Ñ': canvas.Ficha(letrasPalabraUsuario.get(i), 0+630, 450, 40, compatibilidad(juego,i));
               
               break;
-    case 'Z': canvas.Ficha(letrasPalabraUsuario.get(i), 0, 450+140, 40, compatibilidad(juego));
+    case 'Z': canvas.Ficha(letrasPalabraUsuario.get(i), 0, 450+140, 40, compatibilidad(juego,i));
               
               break;
-    case 'X': canvas.Ficha(letrasPalabraUsuario.get(i), 0+70, 450+140, 40, compatibilidad(juego));
+    case 'X': canvas.Ficha(letrasPalabraUsuario.get(i), 0+70, 450+140, 40, compatibilidad(juego,i));
               
               break;
-    case 'C': canvas.Ficha(letrasPalabraUsuario.get(i), 0+140, 450+140, 40, compatibilidad(juego));
+    case 'C': canvas.Ficha(letrasPalabraUsuario.get(i), 0+140, 450+140, 40, compatibilidad(juego,i));
               
               break;
-    case 'V': canvas.Ficha(letrasPalabraUsuario.get(i), 0+210, 450+140, 40, compatibilidad(juego));
+    case 'V': canvas.Ficha(letrasPalabraUsuario.get(i), 0+210, 450+140, 40, compatibilidad(juego,i));
               
               break;
-    case 'B': canvas.Ficha(letrasPalabraUsuario.get(i), 0+280, 450+140, 40, compatibilidad(juego));
+    case 'B': canvas.Ficha(letrasPalabraUsuario.get(i), 0+280, 450+140, 40, compatibilidad(juego,i));
               
               break;
-    case 'N': canvas.Ficha(letrasPalabraUsuario.get(i), 0+350, 450+140, 40, compatibilidad(juego));
+    case 'N': canvas.Ficha(letrasPalabraUsuario.get(i), 0+350, 450+140, 40, compatibilidad(juego,i));
               
               break;
-    case 'M': canvas.Ficha(letrasPalabraUsuario.get(i), 0+420, 450+140, 40, compatibilidad(juego));
+    case 'M': canvas.Ficha(letrasPalabraUsuario.get(i), 0+420, 450+140, 40, compatibilidad(juego,i));
               
               break;
     
