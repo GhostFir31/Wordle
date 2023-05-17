@@ -78,12 +78,11 @@ canvas=Canvas.getCanvas();
 
  }
 
- public void juegoVisual(JuegoWordle juego) {
+ public int juegoVisual(JuegoWordle juego,int posicionY) {
 
   int compatibilidad;
 
   int posicionX=180;
-  int posicionY=15;
   
   ArrayList<Character> letrasPalabraUsuario=juego.getletrasPalabraUsuario();
    
@@ -103,24 +102,37 @@ canvas=Canvas.getCanvas();
   
   switch(compatibilidad){
    
-    case 0: canvas.Ficha(letrasPalabraUsuario.get(i), posicionX, posicionY, 40,Color.gray);
-    
+    case 0: canvas.Ficha(letrasPalabraUsuario.get(i), posicionX, posicionY, 40,Color.blue);
+            
             break;
   
     case 1: canvas.Ficha(letrasPalabraUsuario.get(i), posicionX, posicionY, 40,Color.green);
-    
+            
             break;
   
     case 2: canvas.Ficha(letrasPalabraUsuario.get(i), posicionX, posicionY, 40,Color.yellow);
-    
+             
             break;
   
     default:System.out.println("Opcion no encontrada");
   
   }
+
   posicionX+=70;
+  
 }
+
+return posicionY+=70;
+
  }
+
+public void pintarLetra(){
+
+
+
+
+
+}
 
 
 }

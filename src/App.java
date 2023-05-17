@@ -17,6 +17,8 @@ public class App {
       JuegoWordle juego;
 
       InterfazWordle visualWordle;
+
+      int posicionY=15;
        
       int opcion;
 
@@ -54,8 +56,9 @@ public class App {
                 else{
 
                  juego.compararString(palabraUsuario,juego.getPalabraAleatoria().trim());
-                 visualWordle.juegoVisual(juego);
-                 
+
+                 posicionY=visualWordle.juegoVisual(juego,posicionY);
+
                 intentos++;
 
               }
