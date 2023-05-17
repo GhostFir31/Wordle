@@ -16,7 +16,7 @@ public class App {
        
       JuegoWordle juego;
 
-      InterfazWordle visualWordle=new InterfazWordle();
+      InterfazWordle visualWordle;
        
       int opcion;
 
@@ -37,11 +37,10 @@ public class App {
                 
                 int intentos=0;
 
-                
-
                 juego = new JuegoWordle();
 
-                
+                visualWordle=new InterfazWordle();
+
                do{
                 System.out.println("Intenta Adivinar La Palabra! "+juego.getPalabraAleatoria());
                 
@@ -55,6 +54,7 @@ public class App {
                 else{
 
                  juego.compararString(palabraUsuario,juego.getPalabraAleatoria().trim());
+                 visualWordle.juegoVisual(juego);
                  
                 intentos++;
 

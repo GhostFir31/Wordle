@@ -81,6 +81,9 @@ canvas=Canvas.getCanvas();
  public void juegoVisual(JuegoWordle juego) {
 
   int compatibilidad;
+
+  int posicionX=180;
+  int posicionY=15;
   
   ArrayList<Character> letrasPalabraUsuario=juego.getletrasPalabraUsuario();
    
@@ -95,13 +98,13 @@ canvas=Canvas.getCanvas();
   System.out.println("evalaucion traspada="+Evaluacion);
   
   for(int i=0;i<Evaluacion.size();i++){
-  
+   
   compatibilidad=Evaluacion.get(i);
   
-  switch(posicionCuadro){
+  switch(compatibilidad){
    
     case 0: canvas.Ficha(letrasPalabraUsuario.get(i), posicionX, posicionY, 40,Color.gray);
-  
+    
             break;
   
     case 1: canvas.Ficha(letrasPalabraUsuario.get(i), posicionX, posicionY, 40,Color.green);
@@ -109,14 +112,13 @@ canvas=Canvas.getCanvas();
             break;
   
     case 2: canvas.Ficha(letrasPalabraUsuario.get(i), posicionX, posicionY, 40,Color.yellow);
-  
+    
             break;
   
     default:System.out.println("Opcion no encontrada");
   
-  
-  
   }
+  posicionX+=70;
 }
  }
 
